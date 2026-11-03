@@ -1,0 +1,22 @@
+<div class="max-w-4xl mx-auto p-6">
+  <h1 class="text-2xl font-semibold mb-4">Productos</h1>
+
+  <mat-spinner *ngIf="loading" diameter="40" class="mx-auto"></mat-spinner>
+
+  <p *ngIf="!loading && products.length === 0" class="text-gray-500">No hay productos cargados.</p>
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <mat-card *ngFor="let product of products">
+      <mat-card-header>
+        <mat-card-title>{{ product.name }}</mat-card-title>
+        <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="pt-2">
+        <p class="text-gray-600">{{ product.description }}</p>
+        <p class="mt-2 font-medium">
+          {{ product.price | currency : 'ARS' : 'symbol-narrow' : '1.0-0' }} · Stock: {{ product.stock }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
