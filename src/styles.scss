@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Tailwind resetea los bordes y deja una línea vertical en los campos "outline" de Material */
+.mdc-notched-outline__notch {
+  border-right: none !important;
+}
+
+/* Colores de los SnackBar */
+.snackbar-success .mdc-snackbar__surface {
+  background-color: #2e7d32 !important;
+}
+.snackbar-error .mdc-snackbar__surface {
+  background-color: #c62828 !important;
+}
+.snackbar-success .mdc-snackbar__label,
+.snackbar-error .mdc-snackbar__label,
+.snackbar-success .mat-mdc-button,
+.snackbar-error .mat-mdc-button {
+  color: #fff !important;
+}
